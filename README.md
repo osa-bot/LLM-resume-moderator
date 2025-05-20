@@ -1,49 +1,109 @@
-# LLM Resume Moderator
-
-Проект для автоматизации модерации резюме на русском языке с использованием современных языковых моделей.
+# LLM-resume-moderator
 
 ---
 
-## 🌟 **Особенности**
-- **Модерация резюме**: Анализ соответствия критериям, тональности и релевантности.
-- **Zero-shot подход**: Классификация без предварительного обучения на доменных данных.
+[![OSA-improved](https://img.shields.io/badge/improved%20by-OSA-yellow)](https://github.com/aimclub/OSA)
+
+Built with:
+
+![fastapi](https://img.shields.io/badge/FastAPI-009688.svg?style={0}&logo=FastAPI&logoColor=white)
+![openai](https://img.shields.io/badge/OpenAI-412991.svg?style={0}&logo=OpenAI&logoColor=white)
+![pydantic](https://img.shields.io/badge/Pydantic-E92063.svg?style={0}&logo=Pydantic&logoColor=white)
 
 ---
 
-## 🛠️ **Технологии**
-### Модели:
-- `meta-llama/Llama-Guard-3-8B` — классификация резюме.
-- `meta-llama/Llama-3.1-8B-Instruct` — zero-shot инференс.
-- `seara/rubert-base-cased-russian-sentiment` — анализ тональности.
-- `intfloat/multilingual-e5-large` — сравнение эмбеддингов.
-- `t-tech/T-lite-it-1.0` — русскоязычная классификация.
+## Overview
 
-### Библиотеки:
-`PyTorch · Transformers · Pandas · llama-index`
+LLM-resume-moderator automates the review of Russian language resumes, ensuring they meet specific criteria and assessing their overall quality. It offers a fast and efficient way to screen candidates without needing pre-trained data, helping recruiters identify suitable applicants quickly.
 
-## 🚀 **Развёртывание**
+---
 
-```bash
-git clone https://github.com/LISA-ITMO/LLM-resume-moderator.git &&
-cd LLM-resume-moderator &&
-docker-compose -f docker-compose.prod.yaml up -d 
+## Table of Contents
+
+- [Core features](#core-features)
+- [Installation](#installation)
+- [Examples](#examples)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [Citation](#citation)
+
+---
+## Core features
+
+1. **Resume Moderation**: Analyzes resumes against predefined criteria, assessing relevance and overall quality using LLMs.
+2. **Zero-Shot Classification**: Classifies resumes without requiring prior training on domain-specific data, leveraging zero-shot inference capabilities of large language models.
+3. **API Endpoint**: Provides a REST API endpoint for submitting resumes and receiving moderation results with reasoning.
+
+---
+
+## Installation
+
+Install LLM-resume-moderator using one of the following methods:
+
+**Build from source:**
+
+1. Clone the LLM-resume-moderator repository:
+```sh
+git clone https://github.com/LISA-ITMO/LLM-resume-moderator
 ```
 
-## **🌐 Доступ к демо**
-Сервис уже развёрнут и доступен по адресам:
-- api url: http://89.169.149.254:8000
-- Swagger-документация: http://89.169.149.254:8000/docs
+2. Navigate to the project directory:
+```sh
+cd LLM-resume-moderator
+```
 
-## 📂 Структура репозитория
-| Ноутбук                            | Описание                                                              |
-| ---------------------------------- | --------------------------------------------------------------------- |
-| `1_EDA_preproc.ipynb`              | EDA, предобработка данных, анализ тональности и сходства эмбеддингов. |
-| `2_llamaguard_3_8b_zeroshot.ipynb` | Zero-shot классификация резюме с Llama-Guard.                         |
-| `3_extract_rules.ipynb`            | Извлечение критериев модерации из документов.                         |
-| `4_inference.ipynb`                | Классификация резюме с Llama-3.1-8B-Instruct.                         |
-| `5_local_inference.ipynb`          | Локальный инференс на русском с моделью T-lite-it-1.0.                |
+3. Install the project dependencies:
 
-## 📬 Контакты
-Telegram: `@Vlodimirshil`
-    
-Email: `vladimir@itmo.ru`
+```sh
+pip install -r requirements.txt
+```
+
+---
+
+## Examples
+
+Examples of how this should work and how it should be used are available [here](https://github.com/LISA-ITMO/LLM-resume-moderator/tree/main/examples).
+
+---
+
+## Documentation
+
+A detailed LLM-resume-moderator description is available [here](https://github.com/LISA-ITMO/LLM-resume-moderator/tree/main/data/docs).
+
+---
+
+## Contributing
+
+- **[Report Issues](https://github.com/LISA-ITMO/LLM-resume-moderator/issues)**: Submit bugs found or log feature requests for the project.
+
+---
+
+## Citation
+
+If you use this software, please cite it as below.
+
+### APA format:
+
+    LISA-ITMO (2025). LLM-resume-moderator repository [Computer software]. https://github.com/LISA-ITMO/LLM-resume-moderator
+
+### BibTeX format:
+
+    @misc{LLM-resume-moderator,
+
+        author = {LISA-ITMO},
+
+        title = {LLM-resume-moderator repository},
+
+        year = {2025},
+
+        publisher = {github.com},
+
+        journal = {github.com repository},
+
+        howpublished = {\url{https://github.com/LISA-ITMO/LLM-resume-moderator.git}},
+
+        url = {https://github.com/LISA-ITMO/LLM-resume-moderator.git}
+
+    }
+
+---
